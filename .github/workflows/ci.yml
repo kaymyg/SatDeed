@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install test dependencies
+        # The library itself has no dependencies. These are for the test
+        # runner and for validating examples against the JSON Schema.
+        run: pip install pytest jsonschema
+
+      - name: Run the test suite
+        run: python -m pytest reference/tests -q
+
+      - name: Examples must regenerate deterministically
+        # Every value under examples/ is produced by the library. If this step
+        # fails, the specification and the published examples have drifted.
+        run: |
+          python reference/tools/generate_examples.py
+          git diff --exit-code examples/
+
+      - name: Library must import with no third party packages
+        run: |
+          pip uninstall -y jsonschema
+          python -c "import sys; sys.path.insert(0, 'reference'); import satdeed; print(satdeed.__version__)"

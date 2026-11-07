@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://satdeed.org/schema/satdeed-record-0.1.schema.json",
+  "title": "SatDeed Record v0.1",
+  "description": "A SatDeed record. Note that schema validity is necessary but not sufficient: a record must also satisfy the derivation, canonicalization and signature rules in SPECIFICATION.md, which a JSON Schema cannot express.",
+  "type": "object",
+  "required": ["satdeed", "record_type", "asset_uid", "issuer", "issued_at", "status"],
+  "unevaluatedProperties": false,
+  "properties": {
+    "satdeed": {
+      "const": "0.1",
+      "description": "Specification version this record claims to follow."
+    },
+    "record_type": {
+      "enum": ["asset", "status"]
+    },
+    "asset_uid": {
+      "$ref": "#/$defs/hash32",
+      "description": "The 32 byte derived asset identifier, lowercase hex."
+    },
+    "issuer": {
+      "type": "object",
+      "required": ["issuer_id", "public_key"],
+      "additionalProperties": false,
+      "properties": {
+        "issuer_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]([a-z0-9._-]{0,62}[a-z0-9])?$",
+          "description": "Stable lowercase label for the issuer. A DNS name is the recommended form because it is already globally unique and already has an owner."
+        },
+        "public_key": {
+          "$ref": "#/$defs/hash32",
+          "description": "32 byte x only secp256k1 public key, as used by BIP-340."
+        }
+      }
+    },
+    "issued_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+      "description": "UTC, whole seconds, Z suffix. The issuer's own clock, with no evidentiary weight of its own. The anchoring block is what establishes a time the record could not predate."
+    },
+    "status": {
+      "enum": ["active", "superseded", "revoked", "disputed"]
+    },
+    "supersedes": {
+      "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/hash32" }],
+      "description": "Record hash of the record this one replaces."
+    },
+    "issuer_signature": {
+      "type": "object",
+      "required": ["algorithm", "signature"],
+      "additionalProperties": false,
+      "properties": {
+        "algorithm": { "const": "BIP340-schnorr-secp256k1" },
+        "signature": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{128}$"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "record_type": { "const": "asset" } } },
+      "then": {
+        "required": ["asset_id", "asset_class", "verification_level"],
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "pattern": "^SD0(-[0-9A-HJKMNP-TV-Z]{1,8})+-[0-9A-HJKMNP-TV-Z]{4}$",
+            "description": "Crockford base32 display form of the first 20 bytes of asset_uid, with a four character checksum."
+          },
+          "asset_class": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Open vocabulary. Registered values in v0.1: vehicle, real_property, warehouse_receipt, equipment, commodity, invoice, intellectual_property."
+          },
+          "verification_level": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4,
+            "description": "Evidence class, not a legal ranking. See SPECIFICATION.md section 9."
+          },
+          "attributes": {
+            "type": "object",
+            "description": "Public, non sensitive descriptive attributes. Anything that could identify a person, or that has low enough entropy to be guessed, belongs in attribute_commitments instead."
+          },
+          "attribute_commitments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "commitment"],
+              "additionalProperties": false,
+              "properties": {
+                "name": { "type": "string", "minLength": 1 },
+                "commitment": { "$ref": "#/$defs/hash32" }
+              }
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type", "digest_algorithm", "commitment", "storage"],
+              "additionalProperties": false,
+              "properties": {
+                "type": { "type": "string", "minLength": 1 },
+                "digest_algorithm": { "const": "SHA-256" },
+                "commitment": { "$ref": "#/$defs/hash32" },
+                "storage": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "description": "Hints only. An empty array is valid and means the holder keeps the document. A verifier must never treat a storage reference as authoritative."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "record_type": { "const": "status" } } },
+      "then": {
+        "required": ["supersedes", "reason"],
+        "properties": {
+          "supersedes": { "$ref": "#/$defs/hash32" },
+          "reason": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "hash32": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}
