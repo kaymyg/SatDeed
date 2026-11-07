@@ -8,6 +8,21 @@ ownership records.**
 **Status: draft, version 0.1.** Nothing here is stable. This repository exists
 to be implemented, attacked and revised.
 
+> ### Open call for independent review
+>
+> **[Issue #1: Independent Implementation and Technical Review of SatDeed](https://github.com/kaymyg/SatDeed/issues/1)**
+>
+> There is one implementation of this specification and the same people wrote
+> both, which means every ambiguity in the text has been resolved the same way
+> twice. The project is asking developers to build a second implementation from
+> the specification alone, to attack the construction, and to challenge the
+> reason SatDeed should exist at all, including the case for deleting most of
+> it in favour of existing work.
+>
+> SatDeed should earn its place through independent verification, not through
+> the strength of its claims. No new features are being accepted until that
+> review has had a chance to happen.
+
 ---
 
 ## What this is
