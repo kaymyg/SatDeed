@@ -1,0 +1,30 @@
+{
+  "index": 63,
+  "leaf_count": 64,
+  "path": [
+    {
+      "side": "left",
+      "hash": "13ff735ab98958f2f556052ca0123efde8f7901d07a482147e0a0d767aaf6458"
+    },
+    {
+      "side": "left",
+      "hash": "b23cf5e18e1f3dd1b412b0926c54dba9a8a85606cbcf6c8d0752463f287c9670"
+    },
+    {
+      "side": "left",
+      "hash": "5ad39eff59c5a6867db70d98a7927faa016e91761de23437532a1cc267b7b712"
+    },
+    {
+      "side": "left",
+      "hash": "9b09f18d36c37e992833fe9c4f81ca92c3359e9673454580ff3caf92afd69b5c"
+    },
+    {
+      "side": "left",
+      "hash": "ea6fd0eb7d5ff94dd90da47df20210a8b595c451e337ac59659b0ee79c37bec9"
+    },
+    {
+      "side": "left",
+      "hash": "822f22d34c70a5938a732079ed82766da3666a7f5714d5f445640c62a9997b3f"
+    }
+  ]
+}

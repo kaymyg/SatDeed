@@ -1,0 +1,6 @@
+{
+  "_comment": "Number of sibling hashes a holder must keep, per leaf. Each is 32 bytes, so a proof for this batch is at most 192 bytes.",
+  "leaf_count": 64,
+  "max_path_length": 6,
+  "max_proof_bytes": 192
+}

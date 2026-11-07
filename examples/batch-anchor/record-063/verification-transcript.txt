@@ -1,0 +1,10 @@
+$ satdeed verify asset-record.json --proof inclusion-proof.json --anchor ../anchor.json
+
+PASS  structure: record satisfies the v0.1 structural rules
+PASS  record_hash: 97b3dac599f212e862dfff12a8518286484fc84f935d34a23e61e496e8059b26
+PASS  issuer_signature: signature is valid for the declared key
+PASS  anchor_payload: BATCH_ROOT, commitment dc9d52c681a58d673e35f0a3faecb64c0aeaa66d01a1c59a37cebb9100ce3e32, 64 leaf/leaves
+PASS  merkle_inclusion: record is leaf 63 of 64 under the anchored root
+PASS  confirmations: 143 confirmations at height 900001, minimum required 6
+
+RESULT: verified

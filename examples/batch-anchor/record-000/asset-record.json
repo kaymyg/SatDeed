@@ -1,0 +1,25 @@
+{
+  "satdeed": "0.1",
+  "record_type": "asset",
+  "asset_id": "SD0-CQZD6BV9-86Y54AZ2-98BBH5SE-Y7GECQXX-0W0X",
+  "asset_uid": "65fed32f6941bc522be24a16b8972ef1e0e65fbda84d2c006d70e4cb82eb9de0",
+  "asset_class": "vehicle",
+  "issuer": {
+    "issuer_id": "registry.example",
+    "public_key": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+  },
+  "issued_at": "2026-11-07T23:59:00Z",
+  "verification_level": 3,
+  "attributes": {
+    "manufacturer": "Example Motors",
+    "year_of_manufacture": 2026
+  },
+  "attribute_commitments": [],
+  "documents": [],
+  "supersedes": null,
+  "status": "active",
+  "issuer_signature": {
+    "algorithm": "BIP340-schnorr-secp256k1",
+    "signature": "f7b2faf67ecfb8aaed370c1d602155879edfa962010e49ed40c010384594b14e94b1a5f2e6a4d08535f963a2288f7785ca82f96092e19602e5e3ab5a8bef04d8"
+  }
+}

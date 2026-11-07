@@ -1,0 +1,37 @@
+{
+  "satdeed": "0.1",
+  "record_type": "asset",
+  "asset_id": "SD0-09RRP5XW-03WFDTQN-FVW3ZGNC-SX846T43-18A3",
+  "asset_uid": "02718b17bc00f8f6eaf57ef83fc2accf504368834749b7dd6b643ddfe2752a57",
+  "asset_class": "warehouse_receipt",
+  "issuer": {
+    "issuer_id": "grain.example",
+    "public_key": "5cbdf0646e5db4eaa398f365f2ea7a0e3d419b7e0330e39ce92bddedcac4f9bc"
+  },
+  "issued_at": "2026-10-28T14:05:00Z",
+  "verification_level": 2,
+  "attributes": {
+    "commodity": "white maize",
+    "grade": "1",
+    "quantity_kg": 37800,
+    "warehouse": "Depot 3, Example Industrial Area",
+    "deposit_date": "2026-10-28"
+  },
+  "attribute_commitments": [],
+  "documents": [
+    {
+      "type": "warehouse_receipt",
+      "digest_algorithm": "SHA-256",
+      "commitment": "63ce85be47665a411393db4e28572be7b98d4dca8b1480cd3d7fa245d36c853f",
+      "storage": [
+        "https://records.grain.example/{commitment}"
+      ]
+    }
+  ],
+  "supersedes": null,
+  "status": "active",
+  "issuer_signature": {
+    "algorithm": "BIP340-schnorr-secp256k1",
+    "signature": "f5284467157b1992b4e171dbbdc8e4a38cf05d6410f132b06085e52691ea895723de15b3215d26a492adc5fa35c2ac9f3be6f94ec70f5e9443e56495b94980ff"
+  }
+}

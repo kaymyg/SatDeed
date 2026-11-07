@@ -1,0 +1,8 @@
+{
+  "_comment": "What an independent observer reads off the chain. The txid here is a placeholder: no transaction has been broadcast.",
+  "txid": "0000000000000000000000000000000000000000000000000000000000000000",
+  "output_index": 0,
+  "op_return_data": "53440101ed8df7c6909bcd9e026c7dffa49592ba5be3d32509f5e7e43f410ed1bd15888000000001",
+  "block_height": 900000,
+  "confirmations": 144
+}

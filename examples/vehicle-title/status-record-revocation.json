@@ -1,0 +1,17 @@
+{
+  "satdeed": "0.1",
+  "record_type": "status",
+  "asset_uid": "6d3d9c4e2539195d6ecba57ce48f26b11600f6b0cdb3080fe29a58df1cebc5dd",
+  "issuer": {
+    "issuer_id": "registry.example",
+    "public_key": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+  },
+  "issued_at": "2027-02-02T11:30:00Z",
+  "status": "revoked",
+  "supersedes": "ed8df7c6909bcd9e026c7dffa49592ba5be3d32509f5e7e43f410ed1bd158880",
+  "reason": "registration cancelled, vehicle written off after an accident",
+  "issuer_signature": {
+    "algorithm": "BIP340-schnorr-secp256k1",
+    "signature": "7ae57014e566df78795b089020fad4eb9c6a72f5d851c4ea48ee675ab11d45d7312f92dd41d0bd6c9bea7b118faf23466a2cae935fe3fe5242d36a607f0fe47f"
+  }
+}

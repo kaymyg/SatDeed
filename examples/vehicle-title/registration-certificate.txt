@@ -1,0 +1,14 @@
+REPUBLIC OF EXAMPLE
+MOTOR VEHICLE REGISTRATION CERTIFICATE
+
+Certificate number : MV-2026-0000912
+Registration mark  : KDX 442T
+Chassis number     : LC0ABC123DEF45678
+Engine number      : EX4G15D0099112
+Make and model     : Example Motors, Electric Motorcycle
+Year of manufacture: 2026
+Registered keeper  : (withheld from the public record)
+Date of first entry: 2026-03-14
+
+This certificate is a specimen used as a SatDeed worked example.
+It does not describe a real vehicle and confers no rights.

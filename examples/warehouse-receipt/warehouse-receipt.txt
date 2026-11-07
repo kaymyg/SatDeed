@@ -1,0 +1,12 @@
+EXAMPLE GRAIN HANDLERS LIMITED
+WAREHOUSE RECEIPT
+
+Receipt number   : WR-2026-004417
+Warehouse        : Depot 3, Example Industrial Area
+Commodity        : White maize, grade 1
+Quantity         : 420 bags, 90 kg each, 37,800 kg gross
+Moisture content : 13.1 percent
+Date of deposit  : 2026-10-28
+Depositor        : (withheld from the public record)
+
+Specimen document for a SatDeed worked example. Not a receipt for any goods.

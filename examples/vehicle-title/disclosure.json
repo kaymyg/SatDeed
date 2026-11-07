@@ -1,0 +1,14 @@
+{
+  "_comment": "Held by the issuer, released only to a party entitled to confirm the record. Publishing this file would undo the privacy the commitments provide.",
+  "asset_salt": "1111111111111111111111111111111111111111111111111111111111111111",
+  "identifying_attributes": {
+    "chassis_number": "LC0ABC123DEF45678",
+    "engine_number": "EX4G15D0099112"
+  },
+  "attribute_salts": {
+    "chassis_number": "3333333333333333333333333333333333333333333333333333333333333333"
+  },
+  "document_salts": {
+    "registration_certificate": "2222222222222222222222222222222222222222222222222222222222222222"
+  }
+}

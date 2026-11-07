@@ -1,0 +1,17 @@
+$ satdeed verify asset-record.json --anchor anchor.json --issuers issuers.json
+
+PASS  structure: record satisfies the v0.1 structural rules
+PASS  record_hash: ed8df7c6909bcd9e026c7dffa49592ba5be3d32509f5e7e43f410ed1bd158880
+PASS  issuer_signature: signature is valid for the declared key
+PASS  issuer_identity: key matches the directory entry for 'registry.example'
+PASS  anchor_payload: SINGLE_RECORD, commitment ed8df7c6909bcd9e026c7dffa49592ba5be3d32509f5e7e43f410ed1bd158880, 1 leaf/leaves
+PASS  anchor_commitment: record hash equals the anchored commitment
+PASS  confirmations: 144 confirmations at height 900000, minimum required 6
+
+RESULT: verified
+
+$ satdeed check-document asset-record.json --type registration_certificate \
+    --salt 2222222222222222222222222222222222222222222222222222222222222222 --file registration-certificate.txt
+
+PASS  document:registration_certificate: presented file matches the committed document
+      file sha256: 0a064904f575cbcf1e2a63a0d4fba9816a992b02bf0218771cc9c03624ea5954

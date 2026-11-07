@@ -1,0 +1,42 @@
+{
+  "satdeed": "0.1",
+  "record_type": "asset",
+  "asset_id": "SD0-DMYSRKH5-74CNTVPB-MNYE93S6-P4B01XNG-0SC0",
+  "asset_uid": "6d3d9c4e2539195d6ecba57ce48f26b11600f6b0cdb3080fe29a58df1cebc5dd",
+  "asset_class": "vehicle",
+  "issuer": {
+    "issuer_id": "registry.example",
+    "public_key": "f9308a019258c31049344f85f89d5229b531c845836f99b08601f113bce036f9"
+  },
+  "issued_at": "2026-11-07T09:00:00Z",
+  "verification_level": 3,
+  "attributes": {
+    "manufacturer": "Example Motors",
+    "model": "Electric Motorcycle",
+    "year_of_manufacture": 2026,
+    "body_type": "motorcycle"
+  },
+  "attribute_commitments": [
+    {
+      "name": "chassis_number",
+      "commitment": "86aefef96f193b2a501b8e3a552b852c8249c9f3d97c9521e1ef6b818f0acab5"
+    }
+  ],
+  "documents": [
+    {
+      "type": "registration_certificate",
+      "digest_algorithm": "SHA-256",
+      "commitment": "de1ff411b4a2521e8b320ee3d7108dd9a719fe10763fd469d2c877aaa5e561bd",
+      "storage": [
+        "https://records.registry.example/v1/doc/{commitment}",
+        "ipfs://<cid placeholder, the commitment is what binds>"
+      ]
+    }
+  ],
+  "supersedes": null,
+  "status": "active",
+  "issuer_signature": {
+    "algorithm": "BIP340-schnorr-secp256k1",
+    "signature": "0829f85c641fd955ea7522aeacec80926024701e400bf2d48906f9b53592e135ba6e34f6458756071db0d98cef7837ea8418874569a453e990dd23eaffb2b388"
+  }
+}
