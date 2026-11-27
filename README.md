@@ -211,6 +211,8 @@ worth anyone's time.
 
 ## Contributing
 
+Looking for something to work on? See [HELP_WANTED.md](HELP_WANTED.md).
+
 Review of the specification is more valuable than code right now. The most
 useful contribution available is a second implementation in another language,
 written without reading the Python, that reproduces every value in
